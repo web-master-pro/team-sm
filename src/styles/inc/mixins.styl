@@ -1,0 +1,81 @@
+container(w = 1000px)
+    display block
+    max-width w
+    margin-left auto
+    margin-right auto
+    position relative
+
+font(face = Regular)
+    if face == Light
+        font-family "ProximaNova-Light", sans-serif
+        font-weight 300
+    if face == Regular
+        font-family "ProximaNova-Regular", sans-serif
+        font-weight 400
+    if face == Semi
+        font-family "ProximaNova-Semibold", sans-serif
+        font-weight 600
+    if face == Bold
+        font-family "ProximaNova-Bold", sans-serif
+        font-weight 700
+        // .safari &
+        // .ios &
+        //     font-weight 500
+    if face == Extra
+        font-family "ProximaNova-Extrabold", sans-serif
+        font-weight 800
+
+
+line-solid()
+    width 100%
+    max-width 1400px
+    margin-left auto
+    margin-right auto
+    height 1px
+    background-color #2cbe82
+    background-image linear-gradient(to right, #a9efd2 0%, #009457 50%, #a9efd2 100%)
+
+line-back()
+    display block
+    width 100%
+    max-width 1400px
+    margin-left auto
+    margin-right auto
+    position relative
+    &::before
+        content ""
+        display block
+        height 1px
+        background-color #2cbe82
+        background-image linear-gradient(to right, #a9efd2 0%, #009457 30%, #009457 70%, #a9efd2 100%)
+        position absolute
+        left 0px
+        right 0px
+        top 50%
+    &::after
+        content ""
+        display block
+        width 260px
+        height 10px
+        background-color white
+        position absolute
+        top 50%
+        margin-top -5px
+        left 50%
+        margin-left -130px
+        +above(480px)
+            width 380px
+            margin-left -190px
+        +above(768px)
+            width 540px
+            margin-left -270px
+
+
+
+fs($min-font, $max-font, $min-width = 320px, $max-width=1100px)
+    font-size: $min-font
+    @media (min-width: $min-width)
+        font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+    @media (min-width: $max-width)
+        font-size: $max-font

@@ -1,0 +1,140 @@
+.s-clients
+    &__inner
+        container(1400px)
+        padding 75px 10px 175px
+
+    &__title
+        color #009457
+        font(Bold)
+        font-size 20px
+        font-weight 700
+        line-height 1
+        text-align center
+        padding 0
+        margin-bottom 55px
+        line-back()
+        span
+            position relative
+            z-index 50
+        +above(480px)
+            font-size 24px
+        +above(768px)
+            font-size 30px
+
+.clients-slider
+    width 100%
+    position relative
+    padding-bottom 60px
+    padding-left 60px
+    padding-right 60px
+
+    &::after
+        content ""
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        line-solid()
+
+    &__slide
+        display block
+        vertical-align top
+        max-width 220px
+        margin 0 auto
+        +below(479px)
+            max-width 150px !important
+
+    &__top
+        display flex
+        flex-flow row nowrap
+        justify-content center
+        align-items center
+        width 100%
+        height 150px
+
+    &__logo
+        display block
+        width auto !important
+        height auto
+        max-width 220px
+        +below(479px)
+            max-width 150px
+
+
+    &__caption
+        color #414141
+        font()
+        font-size 16px
+        font-weight 400
+        text-align center
+        max-width 200px
+        margin 0 auto
+
+    .owl-nav
+        display block
+        height 55px
+        position absolute
+        left 0
+        right 0
+        top 50%
+        transform translateY(-50%)
+
+    .owl-prev
+        width 55px
+        height 55px
+        font-size 0
+        color transparent
+        cursor pointer
+        opacity .2
+        transition opacity .3s ease
+        position absolute
+        left 0
+        background url(img/slider-prev.png) no-repeat center center
+        &:hover
+            opacity 1
+        +below(479px)
+            transform-origin left center
+            transform scale(.5)
+
+    .owl-next
+        width 55px
+        height 55px
+        font-size 0
+        color transparent
+        cursor pointer
+        opacity .2
+        transition opacity .3s ease
+        position absolute
+        right 0
+        background url(img/slider-next.png) no-repeat center center
+        &:hover
+            opacity 1
+        +below(479px)
+            transform-origin left center
+            transform scale(.5)
+
+    .owl-dots
+        position absolute
+        bottom -50px
+        left 50%
+        transform translateX(-50%)
+        list-style none
+        font-size 0
+        padding 0
+        margin 0
+
+    .owl-dot
+        display inline-block
+        width 15px
+        height 15px
+        opacity 0.3
+        font-size 0
+        background-color #22bb7c
+        border none
+        border-radius 50%
+        outline none
+        cursor pointer
+        margin 0 5px
+        &.active
+            opacity 1
+

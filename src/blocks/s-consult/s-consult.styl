@@ -1,0 +1,163 @@
+.s-consult
+    background #fff url(img/s-consult-bg.jpg) no-repeat center bottom
+
+    &__inner
+        container(1040px)
+        min-height 680px
+        padding 20px 20px 0
+
+    &__form
+        position absolute
+        right 15px
+        bottom 135px
+        +below(830px)
+            position relative
+            top auto
+            bottom auto
+            left auto
+            right auto
+            margin 0 auto 30px
+
+    &__pop-info
+        position absolute
+        top 10px
+        left 10px
+        +below(830px)
+            top 350px
+            left 10px
+        +below(360px)
+            top 260px
+
+    &__auditor
+        display inline-block
+        position absolute
+        left 350px
+        bottom 470px
+        +below(992px)
+            left 310px
+        +below(830px)
+            position relative
+            bottom auto
+            left auto
+            text-align center
+            display block
+            margin 0 auto 30px
+
+    &__name
+        color #002d1a
+        font(Bold)
+        font-size 24px
+        line-height 1
+        margin 0 0 5px
+
+    &__position
+        color #03b16a
+        font()
+        font-size 16px
+        line-height 1
+        margin 0
+
+    &__photo
+        position absolute
+        bottom 0
+        left 64px
+        +below(992px)
+            left 20px
+        +below(830px)
+            position relative
+            bottom auto
+            left auto
+            display block
+            width 100%
+            max-width 297px
+            height auto
+            margin 0 auto
+
+.consult-form
+    display block
+    width 100%
+    max-width 460px
+    padding 0
+
+    &__title
+        color #002d1a
+        font(Bold)
+        fs(22px,40px)
+        line-height 1
+        margin 0 0 .6em
+
+    &__text
+        color #002d1a
+        font(Bold)
+        fs(14px,20px)
+        line-height 1.5
+        margin 0 0 2.25em
+
+    &__group
+        width 100%
+        +below(767px)
+            text-align center
+
+    &__input
+        display inline-block
+        vertical-align top
+        +below(767px)
+            width 220px
+        +below(479px)
+            width 200px
+
+    &__button
+        display inline-block
+        vertical-align top
+        width 100%
+        max-width 80px
+        height 70px
+        background-color #00b168
+        background-image linear-gradient(to top, #01b169 0%, #33c186 100%)
+        border-radius 40px
+        border-bottom 4px solid #009457
+        border none
+        color transparent
+        outline none
+        transition background-image .3s linear
+        cursor pointer
+        margin 0 0 0 5px
+        position relative
+        &::before
+            content ""
+            display block
+            width 29px
+            height 29px
+            background url(img/icon-phone.png) no-repeat center center
+            position absolute
+            top 50%
+            left 50%
+            margin-left -14px
+            margin-top -13px
+
+
+        &:hover
+            color @color
+            text-decoration none
+            background-color #41eba5
+            background-image linear-gradient(to top, #01b169 0%, #41eba5 100%)
+            animation splash 0.8s 0s ease-out 1
+
+        &:active
+            color @color
+            text-decoration none
+            background-color #009457
+            background-image none
+
+        +below(767px)
+            height 60px
+            width 60px
+            margin-left 5px
+            &::before
+                background-size 25px 25px
+        +below(479px)
+            height 50px
+            width 50px
+            &::before
+                background-size 20px 20px
+

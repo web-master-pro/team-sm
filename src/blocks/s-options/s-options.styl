@@ -1,0 +1,333 @@
+.s-options
+    background #fff
+
+    &__inner
+        container(1100px)
+        padding 105px 20px 60px
+        +below(767px)
+            padding 60px 10px 40px
+
+    &__title
+        color #002d1a
+        font(Bold)
+        fs(30px,40px)
+        line-height 1
+        text-align center
+        margin 0 auto 2em
+
+
+    &__options
+        margin 0 auto 105px
+        +below(767px)
+            margin-bottom 50px
+
+    &__btn-container
+        line-back()
+
+    &__button
+        position relative
+        z-index 60
+        margin 0 auto
+
+
+.opt
+    position relative
+    &__tabs
+        display flex
+        flex-flow row nowrap
+        justify-content space-around
+        list-style none
+        padding 0
+        margin 0 -10px 20px -10px
+        +below(1100px)
+            flex-wrap wrap
+
+    &__tab
+        flex 1 1 16.6666%
+        height 218px
+        display block
+        position relative
+        margin 0 0 20px
+        +below(479px)
+            height 168px
+
+        &::before
+            content ""
+            display block
+            width 52px
+            height 60px
+            position absolute
+            top 15px
+            left 50%
+            margin-left -30px
+            transition top .3s ease .1s
+
+        &--1::before
+            background url(img/s-options-icon-1.png) no-repeat center center
+        &--2::before
+            background url(img/s-options-icon-2.png) no-repeat center center
+        &--3::before
+            background url(img/s-options-icon-3.png) no-repeat center center
+        &--4::before
+            background url(img/s-options-icon-4.png) no-repeat center center
+        &--5::before
+            background url(img/s-options-icon-5.png) no-repeat center center
+        &--6::before
+            background url(img/s-options-icon-6.png) no-repeat center center
+        &:hover::before
+            top -70px
+        +below(1100px)
+            flex 0 0 33.3333%
+            &::before
+                display none
+        +below(767px)
+            flex 0 0 200px
+
+        +below(479px)
+            flex 0 0 140px
+            margin-bottom 10px
+
+    &__tab-box
+        display block
+        width 160px
+        height 200px
+        background-color white
+        box-shadow 0 0 21px rgba(0, 0, 0, 0.2)
+        margin 9px auto 0
+        text-decoration none
+        transition all .3s ease
+        padding 20px 5px 20px 15px
+        position relative
+        +below(479px)
+            width 130px
+            padding-right 10px
+            height 150px
+
+        &:hover
+            height 218px
+            background-color #009457
+            background-image linear-gradient(to top, #01b169 0%, #33c186 100%)
+            // animation splash-min 0.5s 0s ease-out 1
+            padding-top 29px
+            margin-top 0
+            +below(479px)
+                height 168px
+
+    &__tab-title
+        color #009457
+        font(Bold)
+        fs(16px,20px)
+        line-height 1
+        margin 0 0 15px
+        transition all .3s ease
+        ^[0]__tab-box:hover &
+            color white
+
+    &__tab-descr
+        display block
+        width 100%
+        height 90px
+        color #002d1a
+        font()
+        fs(13px,16px)
+        line-height 1.2
+        margin 0
+        transition all .3s ease
+        ^[0]__tab-box:hover &
+            color white
+        +below(479px)
+            height 55px
+
+    &__tab-more
+        display inline-block
+        color #009457
+        font()
+        fs(14px,18px)
+        line-height 1
+        border-bottom 1px dotted #009457
+        transition all .3s ease
+        ^[0]__tab-box:hover &
+            color white
+            border-bottom none
+
+    &__pages
+        display block
+        width 100%
+        list-style none
+        font-size 0
+        padding 0
+        margin 0
+        background-color #009457
+        background-image linear-gradient(to top, #01b169 0%, #33c186 100%)
+        position relative
+        height 400px
+        overflow hidden
+        // transition all 0.5s ease
+
+    &__btn-more
+        width 140px
+        height 28px
+        color #01b169
+        font()
+        font-size 16px
+        line-height 1
+        text-align center
+        text-decoration underline
+        background #fff
+        border none
+        border-radius 14px
+        padding-left 15px
+        position absolute
+        bottom -14px
+        left 25%
+        z-index 50
+        outline none
+        cursor pointer
+        &::before
+            content ""
+            display block
+            width 9px
+            height 12px
+            background url(img/icon-more.png) no-repeat 0 0
+            position absolute
+            top 8px
+            left 12px
+        &.on
+            &::before
+                transform rotate(180deg)
+        +below(479px)
+            left 50%
+            margin-left -70px
+    &__expand
+        display inline
+        ^[0]__btn-more.on &
+            display none
+    &__collapse
+        display none
+        ^[0]__btn-more.on &
+            display inline
+
+.opt-page
+    color white
+    padding 0
+    margin 0
+    position absolute
+    z-index 0
+    top 0
+    left 0
+    right 0
+    bottom 0
+    opacity 0
+    display block
+    transition opacity .3s ease
+    overflow hidden
+    &.active
+        position absolute
+        z-index 1
+        opacity 1
+    +below(479px)
+        bottom 50px
+
+    &__left
+        display block
+        padding 0
+        overflow hidden
+        position absolute
+        top 40px
+        left 55px
+        bottom 50px
+        right 35%
+        +below(1000px)
+            left 30px
+            top 30px
+        +below(479px)
+            position relative
+            top auto
+            left auto
+            right auto
+            bottom auto
+            padding 20px
+
+    &__in
+        position relative
+        padding 0
+        text-overflow ellipsis
+
+    &__right
+        display block
+        // max-width 294px
+        position absolute
+        left 68%
+        top 70px
+        right 50px
+        bottom 0
+        overflow hidden
+        padding 0
+        +below(1000px)
+            right 30px
+            top 50px
+        +below(479px)
+            position relative
+            top auto
+            left auto
+            right auto
+            bottom auto
+            padding 20px
+            max-width 100%
+            width 100%
+
+    &__img
+        display block
+        width 100%
+        max-width 294px
+        height auto
+        margin 0 auto
+
+    &__title
+        color white
+        font(Bold)
+        line-height 1
+        margin 0 0 .4em
+        fs(20px,40px)
+        +below(479px)
+            text-align center
+
+    &__subtitle
+        color white
+        font(Bold)
+        fs(16px,24px)
+        line-height 1
+        margin 0 0 1.45em
+        +below(479px)
+            text-align center
+
+    &__txt
+        color white
+        font()
+        fs(14px,18px)
+        line-height 1.5
+        font-weight 400
+        margin 0 0 1.1em
+
+    &__list-title
+        color white
+        font(Bold)
+        fs(14px,18px)
+        line-height 1.5
+        margin 2em 0 .2em
+
+    &__list
+        display block
+        margin 0 0 20px
+        list-style disc
+
+    &__item
+        color white
+        font(Light)
+        fs(14px,18px)
+        line-height 1.5
+
+
+
+
+

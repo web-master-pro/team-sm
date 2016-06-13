@@ -1,0 +1,60 @@
+button()
+    display block
+    width 100%
+    max-width 401px
+    height 81px
+    background-color #00b168
+    background-image linear-gradient(to top, #01b169 0%, #33c186 100%)
+    border-radius 40px
+    border-bottom 4px solid #009457
+    border none
+    color white
+    font()
+    font-size 30px
+    line-height 1
+    text-align center
+    text-decoration none
+    outline none
+    transition background-image .3s linear
+    cursor pointer
+
+    &:hover
+        color @color
+        text-decoration none
+        background-color #41eba5
+        background-image linear-gradient(to top, #01b169 0%, #41eba5 100%)
+        animation splash 0.8s 0s ease-out 1
+
+    &:active
+        color @color
+        text-decoration none
+        background-color #009457
+        background-image none
+
+    +below(767px)
+        font-size 24px
+        max-width 300px
+        height 70px
+        border-bottom-width 3px
+
+    +below(479px)
+        font-size 18px
+        max-width 240px
+        height 50px
+        border-bottom-width 2px
+
+
+.button
+    button()
+
+@keyframes splash
+    from
+        box-shadow: 0 0 8px 6px #60fdbc, 0 0 12px 14px #60fdbc
+    to
+        box-shadow: 0 0 18px 6px rgba(23, 251, 156, 0), 0 0 4px 71px rgba(23, 251, 156, 0)
+
+@keyframes splash-min
+    from
+        box-shadow: 0 0 4px 3px #60fdbc, 0 0 6px 7px #60fdbc
+    to
+        box-shadow: 0 0 9px 3px rgba(23, 251, 156, 0), 0 0 2px 35px rgba(23, 251, 156, 0)

@@ -1,0 +1,154 @@
+.pop-info
+    position absolute
+    z-index 100
+    overflow visible
+    &__trigger
+        position absolute
+        display block
+        width 81px
+        height 77px
+        background-image url(img/star.png)
+        background-repeat no-repeat
+        background-position center top
+        animation pulse 1.3s ease 2s infinite normal;
+        &:hover
+            background-position center bottom
+            animation none
+
+        ^[0]--left &
+            top 0
+            left 0
+            right auto
+
+        ^[0]--right &
+            top 0
+            left auto
+            right 0
+
+    &__box
+        position relative
+        display block
+        top 32px
+        left 95px
+        z-index 105
+        color #002d1a
+        font()
+        fs(14px,18px)
+        line-height 1.5
+        display block
+        width 100%
+        max-width 532px
+        background-color white
+        box-shadow 0 0 15px rgba(0, 0, 0, 0.2)
+        padding 20px 25px 35px
+        display none
+        strong
+            font(Bold)
+        ^[0]--mid &
+            max-width 452px
+        ^[0]--min &
+            max-width 402px
+
+        ^[0]--left &
+            left 95px
+            right auto
+            +below(479px)
+                top 90px
+                left 24px
+            &::before
+                content ""
+                display block
+                width 0
+                height 0
+                border-style solid
+                border-width 0 14px 13px 0
+                border-color transparent #efefef transparent transparent
+                position absolute
+                top -2px
+                left -14px
+                +below(479px)
+                    top -14px
+                    left -2px
+                    border-width 14px 0 0 14px
+                    border-color transparent transparent transparent #efefef
+            &::after
+                content ""
+                display block
+                width 0
+                height 0
+                border-style solid
+                border-width 0 11px 9px 0
+                border-color transparent #fff transparent transparent
+                position absolute
+                top 0
+                left -11px
+                +below(479px)
+                    top -11px
+                    left 0
+                    border-width 11px 0 0 11px
+                    border-color transparent transparent transparent #fff
+
+        ^[0]--right &
+            right 95px
+            left auto
+            +below(479px)
+                top 90px
+                right 24px
+            &::before
+                content ""
+                display block
+                width 0
+                height 0
+                border-style solid
+                border-width 13px 14px 0 0
+                border-color #efefef transparent transparent transparent
+                position absolute
+                top -2px
+                right -14px
+                z-index 110
+                +below(479px)
+                    top -14px
+                    right -2px
+                    border-width 0 0 14px 14px
+                    border-color transparent transparent #efefef transparent
+
+            &::after
+                content ""
+                display block
+                width 0
+                height 0
+                border-style solid
+                border-width 9px 11px 0 0
+                border-color #fff transparent transparent transparent
+                position absolute
+                top 0
+                right -11px
+                z-index 120
+                +below(479px)
+                    top -11px
+                    right 0
+                    border-width 0 0 11px 11px
+                    border-color transparent transparent #fff transparent
+
+        +below(767px)
+            max-width 400px
+        +below(550px)
+            max-width 320px
+        +below(479px)
+            max-width 320px
+            padding 20px
+        +below(400px)
+            max-width 250px
+
+
+@keyframes pulse
+    0%
+        transform translateY(0)
+    14%
+        transform translateY(-3px)
+    28%
+        transform translateY(0)
+    42%
+        transform translateY(-3px)
+    70%
+        transform translateY(0)

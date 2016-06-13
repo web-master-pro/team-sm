@@ -1,0 +1,114 @@
+.footer
+    background-color #22bb7c
+    background-image linear-gradient(to top, #01b169 0%, #33c186 100%)
+
+    &__inner
+        container(1180px)
+        padding 0 20px
+        min-height 191px
+        display flex
+        flex-flow row nowrap
+        justify-content space-between
+        +below(900px)
+            flex-wrap wrap
+            justify-content space-around
+
+    &__left
+        flex 0 0 211px
+        padding-top 21px
+        +below(540px)
+            flex 1 1 100%
+            text-align center
+
+    &__mid
+        flex 1 1 auto
+        padding-top 50px
+        +below(900px)
+            order -1
+            flex 1 1 100%
+
+    &__right
+        flex 0 0 211px
+        padding-top 57px
+        +below(540px)
+            flex 1 1 100%
+            padding-top 30px
+            padding-bottom 30px
+
+    &__logo
+        display block
+        margin 0 0 12px
+        +below(540px)
+            margin-left auto
+            margin-right auto
+
+    &__copyright
+        color white
+        font()
+        font-size 18px
+        line-height 1.2
+        margin 0
+        strong
+            font(Bold)
+
+    &__phone
+        display block
+        color white
+        font()
+        fs(26px,30px)
+        line-height 1
+        text-align center
+        text-decoration none
+        margin 0 auto .3em
+        strong
+            font(Bold)
+
+    &__address
+        display block
+        color white
+        font()
+        font-style normal
+        fs(16px,20px)
+        line-height 1
+        text-align center
+        margin 0 auto 1.5em
+
+    &__privacy
+        display block
+        color white
+        font()
+        font-size 16px
+        line-height 1
+        text-align center
+        text-decoration none
+        margin 0 auto
+        span
+            border-bottom 1px solid #58cc9d
+            transition border .3s ease
+        &:hover
+            text-decoration none
+            span
+                border-bottom-color rgba(88,254,257,0.01)
+
+    &__developed
+        display block
+        width 211px
+        height 75px
+        color white
+        font()
+        font-size 20px
+        line-height 1
+        text-align right
+        text-decoration none
+        background url(img/web-upakovka.png) no-repeat center bottom
+        span
+            border-bottom 2px solid #58cc9d
+            transition border .3s ease
+        &:hover
+            text-decoration none
+            span
+                border-bottom-color rgba(88,254,257,0.01)
+        +below(540px)
+            margin-left auto
+            margin-right auto
+            text-align center

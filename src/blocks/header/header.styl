@@ -1,0 +1,159 @@
+.header
+    width: 100%;
+    position: relative;
+    background url(img/header-bg.jpg) no-repeat center center
+    background-size cover
+    position relative
+    &::before
+        content ""
+        display block
+        width 153px
+        height 197px
+        background url(img/header-candle.png) no-repeat center center
+        position absolute
+        top 112px
+        left 50%
+        margin-left -77px
+        +below(767px)
+            display none
+
+    &__inner
+        container(1040px)
+        padding 320px 20px 190px
+        text-align center
+        +below(767px)
+            padding 20px 20px 30px
+
+    &__logo
+        display inline-block
+        position absolute
+        top 18px
+        left 42px
+        +below(767px)
+            display block
+            position relative
+            top auto
+            left auto
+            margin 0 auto 10px
+
+    &__contacts
+        display inline-block
+        position absolute
+        top 55px
+        right 20px
+        +below(767px)
+            display block
+            text-align center
+            position relative
+            top auto
+            right auto
+            margin 0 auto 20px
+
+    &__phone
+        display block
+        color #05311e
+        font()
+        font-size 30px
+        line-height 1
+        text-align right
+        text-decoration none
+        margin 0 0 7px
+        &:hover
+            color @color
+            text-decoration none
+        strong
+            font(Bold)
+        +below(767px)
+            text-align center
+
+    &__address
+        color #05311e
+        font()
+        font-size 18px
+        line-height 1
+        text-align right
+        font-style normal
+        margin 0
+        +below(767px)
+            font-size 16px
+            text-align center
+
+    &__list
+        display block
+        list-style none
+        text-align center
+        font-size 0
+        padding 0
+        margin 0 auto 20px
+
+    &__item
+        display inline
+        color #b6b6b6
+        font(Semi)
+        font-size 20px
+        line-height 1
+        margin 0 15px 10px
+
+    &__title
+        display inline-block
+        color #002d1a
+        font(Bold)
+        font-size 50px
+        line-height 1.2
+        position relative
+        padding-right 100px
+        text-align right
+        max-width 700px
+        margin 0 auto 40px
+        span
+            display none
+        &::before
+            content ""
+            display block
+            width 82px
+            height 68px
+            background url(img/header-iso.png) no-repeat 0 0
+            position absolute
+            top -2px
+            right 0
+
+        +below(767px)
+            font-size 36px
+            text-align center
+            padding-right 0
+            margin-bottom 20px
+            span
+                display inline
+            &::before
+                position relative
+                top auto
+                left auto
+                right auto
+                margin 0 auto 15px
+
+    &__subtitle
+        color #012e1b
+        font()
+        font-size 30px
+        line-height 1
+        text-align center
+        margin 0 auto 70px
+        +below(767px)
+            font-size 24px
+            margin-bottom 30px
+
+    &__button
+        margin 0 auto 25px
+
+    &__underbutton
+        display inline-block
+        color #012e1b
+        font()
+        font-size 20px
+        line-height 1
+        text-align center
+        margin 0
+        +below(767px)
+            padding 5px 15px
+            background-color rgba(255,255,255,.15)
+

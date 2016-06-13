@@ -1,0 +1,9 @@
+$(document).ready(function(){
+    $(".pop-info__trigger")
+        .mouseenter(function(){
+            $(this).next(".pop-info__box").fadeIn(500);
+        })
+        .mouseleave(function(){
+            $(this).next(".pop-info__box").fadeOut(500);
+        })
+})
