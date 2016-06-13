@@ -78,13 +78,20 @@
             font-size 16px
             text-align center
 
+    &__wrap
+        display flex
+        flex-flow column nowrap
+
     &__list
+        flex 0 0 auto
         display block
         list-style none
         text-align center
         font-size 0
         padding 0
         margin 0 auto 20px
+        +below(767px)
+            order 2
 
     &__item
         display inline
@@ -95,6 +102,7 @@
         margin 0 15px 10px
 
     &__title
+        flex 0 0 auto
         display inline-block
         color #002d1a
         font(Bold)
@@ -107,7 +115,7 @@
         margin 0 auto 40px
         span
             display none
-        &::before
+        &::after
             content ""
             display block
             width 82px
@@ -118,15 +126,15 @@
             right 0
 
         +below(767px)
-            font-size 36px
+            font-size 34px
             text-align center
             padding-right 0
             margin-bottom 20px
             span
                 display inline
-            &::before
+            &::after
                 position relative
-                top auto
+                top 15px
                 left auto
                 right auto
                 margin 0 auto 15px

@@ -1864,13 +1864,31 @@ input,
     line-height: 1;
 }
 
+.header__wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display:    -moz-box;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-flow: column nowrap;
+
+    -webkit-flex-flow: column nowrap;
+        -ms-flex-flow: column nowrap;
+}
+
 .header__list {
     display: block;
+            flex: 0 0 auto;
     margin: 0 auto 20px;
     padding: 0;
     list-style: none;
     text-align: center;
     font-size: 0;
+
+    -webkit-box-flex: 0;
+       -moz-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
 }
 
 .header__item {
@@ -1886,6 +1904,7 @@ input,
 .header__title {
     position: relative;
     display: inline-block;
+            flex: 0 0 auto;
     max-width: 700px;
     margin: 0 auto 40px;
     padding-right: 100px;
@@ -1895,13 +1914,18 @@ input,
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
+
+    -webkit-box-flex: 0;
+       -moz-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
 }
 
 .header__title span {
     display: none;
 }
 
-.header__title::before {
+.header__title::after {
     position: absolute;
     top: -2px;
     right: 0;
@@ -3538,7 +3562,7 @@ input,
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
-    padding: 105px 20px 75px;
+    padding: 105px 24px 75px;
 }
 
 .s-steps__title {
@@ -4369,20 +4393,29 @@ input,
         font-size: 16px;
     }
 
+    .header__list {
+                order: 2;
+
+        -webkit-box-ordinal-group: 3;
+           -moz-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+    }
+
     .header__title {
         margin-bottom: 20px;
         padding-right: 0;
         text-align: center;
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .header__title span {
         display: inline;
     }
 
-    .header__title::before {
+    .header__title::after {
         position: relative;
-        top: auto;
+        top: 15px;
         right: auto;
         left: auto;
         margin: 0 auto 15px;
@@ -4671,6 +4704,18 @@ input,
         padding: 50px 20px;
     }
 
+    .s-clients__inner {
+        padding: 50px 10px;
+    }
+
+    .clients-slider {
+        padding-bottom: 0;
+    }
+
+    .clients-slider::after {
+        display: none;
+    }
+
     .clients-slider__slide {
         max-width: 150px !important;
     }
@@ -4703,6 +4748,10 @@ input,
             -ms-transform-origin: left center;
              -o-transform-origin: left center;
                 transform-origin: left center;
+    }
+
+    .clients-slider .owl-dots {
+        display: none;
     }
 
     .consult-form__input {

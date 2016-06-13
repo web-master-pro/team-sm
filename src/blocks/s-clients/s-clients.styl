@@ -2,6 +2,8 @@
     &__inner
         container(1400px)
         padding 75px 10px 175px
+        +below(479px)
+            padding 50px 10px
 
     &__title
         color #009457
@@ -27,6 +29,8 @@
     padding-bottom 60px
     padding-left 60px
     padding-right 60px
+    +below(479px)
+        padding-bottom 0
 
     &::after
         content ""
@@ -35,6 +39,8 @@
         left 0
         right 0
         line-solid()
+        +below(479px)
+            display none
 
     &__slide
         display block
@@ -59,7 +65,6 @@
         max-width 220px
         +below(479px)
             max-width 150px
-
 
     &__caption
         color #414141
@@ -122,6 +127,8 @@
         font-size 0
         padding 0
         margin 0
+        +below(479px)
+            display none
 
     .owl-dot
         display inline-block
