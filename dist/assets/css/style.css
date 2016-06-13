@@ -2550,17 +2550,99 @@ input,
 }
 
 .s-audit {
-    background-color: #f8f8f8;
+    background: #f8f8f8 url("../img/s-audit-bg-wide.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
 .s-audit__inner {
     position: relative;
     display: block;
-    max-width: 1140px;
-    min-height: 500px;
+    max-width: 1180px;
+    min-height: 674px;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 20px;
+    padding: 80px 20px 50px;
+}
+
+.s-audit__pop-info {
+    position: absolute;
+    top: -40px;
+    left: 30px;
+}
+
+.s-audit__step-link {
+    position: absolute;
+    top: 0;
+    right: 43px;
+    display: block;
+    width: 80px;
+    height: 45px;
+    padding-top: 15px;
+    text-align: right;
+    text-decoration: none;
+    color: #009457;
+    background: url("../img/s-audit-step.png") no-repeat left top;
+    font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.s-audit__step-link:hover {
+    text-decoration: none;
+    color: #009457;
+}
+
+.s-audit__box {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    display: block;
+    max-width: 525px;
+}
+
+.s-audit__title {
+    position: relative;
+    display: block;
+    margin: 0 0 .875em;
+    padding-bottom: .75em;
+    color: #009457;
+    font-family: "ProximaNova-Bold", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+.s-audit__title::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 86%;
+    height: 1px;
+    content: "";
+    background-color: #009457;
+    background-image: -webkit-gradient(linear, left top, right top, from(#009457), to(#a9efd2));
+    background-image: -webkit-linear-gradient(left, #009457 0%, #a9efd2 100%);
+    background-image:    -moz-linear-gradient(left, #009457 0%, #a9efd2 100%);
+    background-image:      -o-linear-gradient(left, #009457 0%, #a9efd2 100%);
+    background-image:         linear-gradient(to right, #009457 0%, #a9efd2 100%);
+}
+
+.s-audit__text {
+    margin: 0 0 1.5em;
+    color: #000;
+    font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.s-audit__text strong {
+    font-family: "ProximaNova-Bold", sans-serif;
+    font-weight: 700;
 }
 
 .s-clients__inner {
@@ -3710,6 +3792,18 @@ input,
         font-size:         calc( 24px + (40 - 24) * ((100vw - 320px) / (1100 - 320)) );
     }
 
+    .s-audit__title {
+        font-size: -webkit-calc( 22px + (40 - 22) * ((100vw - 320px) / (1100 - 320)) );
+        font-size:    -moz-calc( 22px + (40 - 22) * ((100vw - 320px) / (1100 - 320)) );
+        font-size:         calc( 22px + (40 - 22) * ((100vw - 320px) / (1100 - 320)) );
+    }
+
+    .s-audit__text {
+        font-size: -webkit-calc( 16px + (20 - 16) * ((100vw - 320px) / (1100 - 320)) );
+        font-size:    -moz-calc( 16px + (20 - 16) * ((100vw - 320px) / (1100 - 320)) );
+        font-size:         calc( 16px + (20 - 16) * ((100vw - 320px) / (1100 - 320)) );
+    }
+
     .consult-form__title {
         font-size: -webkit-calc( 22px + (40 - 22) * ((100vw - 320px) / (1100 - 320)) );
         font-size:    -moz-calc( 22px + (40 - 22) * ((100vw - 320px) / (1100 - 320)) );
@@ -3856,6 +3950,14 @@ input,
         font-size: 40px;
     }
 
+    .s-audit__title {
+        font-size: 40px;
+    }
+
+    .s-audit__text {
+        font-size: 20px;
+    }
+
     .consult-form__title {
         font-size: 40px;
     }
@@ -3964,6 +4066,10 @@ input,
 
     .s-advs__text {
         font-size: 18px;
+    }
+
+    .s-audit__box {
+        width: 50%;
     }
 
     .opt__tabs {
@@ -4325,6 +4431,28 @@ input,
             -ms-flex: 0 0 300px;
     }
 
+    .s-audit {
+        background-position: left center;
+    }
+
+    .s-audit__inner {
+        min-height: auto;
+    }
+
+    .s-audit__pop-info {
+        left: 10px;
+    }
+
+    .s-audit__box {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 40px 20px;
+        background-color: rgba(248,248,248,.8);
+    }
+
     .consult-form__group {
         text-align: center;
     }
@@ -4673,6 +4801,12 @@ input,
 
     .s-questions__inner {
         padding: 75px 20px;
+    }
+}
+
+@media only screen and (max-width: 478px) {
+    .s-audit__box {
+        padding: 20px 20px 10px;
     }
 }
 

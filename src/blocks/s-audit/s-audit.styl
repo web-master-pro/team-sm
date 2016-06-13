@@ -1,6 +1,89 @@
 .s-audit
-    background-color #f8f8f8
+    background #f8f8f8 url(img/s-audit-bg-wide.jpg) no-repeat center center
+    background-size cover
+    +below(767px)
+        background-position left center
+
     &__inner
-        container(1140px)
-        padding 0 20px
-        min-height 500px
+        container(1180px)
+        padding 80px 20px 50px
+        min-height 674px
+        +below(767px)
+            min-height auto
+
+    &__pop-info
+        position absolute
+        top -40px
+        left 30px
+        +below(767px)
+            left 10px
+
+    &__step-link
+        display block
+        width 80px
+        height 45px
+        background url(img/s-audit-step.png) no-repeat left top
+        color #009457
+        font()
+        font-size 20px
+        line-height 1
+        text-align right
+        padding-top 15px
+        text-decoration none
+        position absolute
+        top 0
+        right 43px
+        &:hover
+            color @color
+            text-decoration none
+
+    &__box
+        display block
+        max-width 525px
+        position absolute
+        top 80px
+        right 20px
+        +below(1100px)
+            width 50%
+        +below(767px)
+            position relative
+            max-width 100%
+            width 100%
+            right auto
+            top auto
+            padding 40px 40px 20px
+            background-color rgba(248,248,248,.8)
+        +below(478px)
+            padding 20px 20px 10px
+
+
+    &__title
+        display block
+        color #009457
+        font(Bold)
+        fs(22px,40px)
+        line-height 1.1em
+        padding-bottom .75em
+        margin 0 0 .875em
+        position relative
+        &::after
+            content ""
+            width 86%
+            height 1px
+            background-color #009457
+            background-image linear-gradient(to right, #009457 0%, #a9efd2 100%)
+            position absolute
+            bottom 0
+            left 0
+
+    &__text
+        color black
+        font()
+        fs(16px,20px)
+        line-height 1.5
+        margin 0 0 1.5em
+        strong
+            font(Bold)
+
+
+
