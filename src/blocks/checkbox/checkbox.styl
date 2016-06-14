@@ -1,0 +1,42 @@
+.checkbox
+    display inline-block
+
+    &__checkbox
+        display inline-block
+        padding 0
+        margin 0
+        opacity 0
+
+    &__checkbox + &__label
+        display inline-block
+        color black
+        font(Bold)
+        fs(16px,20px)
+        font-weight 700
+        line-height 1
+        text-align left
+        cursor pointer
+        padding 0 0 0 34px
+        margin 0 0 20px
+        position relative
+        &::before
+            content ""
+            display block
+            width 16px
+            height 16px
+            background-image url(img/checkbox.png)
+            background-repeat no-repeat
+            background-position left top
+            position absolute
+            top 50%
+            left 0
+            margin-top -8px
+        +below(479px)
+            margin-bottom 10px
+
+    &__checkbox:checked + &__label
+        &::before
+            background-position left bottom
+    &__checkbox:checked + &__label:hover
+            &::before
+                opacity .5

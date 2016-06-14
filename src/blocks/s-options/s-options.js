@@ -48,6 +48,9 @@ $(document).ready(function(){
         var optTab = $(this).parent(),
             tabIndex = optTabs.index(optTab);
 
+        optTabs.removeClass("active");
+        optTab.addClass("active");
+
         optPages.removeClass("active");
         optPages.eq(tabIndex).addClass("active");
         if ($(".opt__pages").hasClass("expanded")) {

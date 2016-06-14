@@ -4,7 +4,7 @@ mixin s-options()
             h2.s-options__title Выберите необходимый сертификат
             .opt.s-options__options
                 ul.opt__tabs
-                    li.opt__tab.opt__tab--1
+                    li.opt__tab.opt__tab--1.active
                         a(href="#").opt__tab-box
                             h3.opt__tab-title ISO 9001
                             p.opt__tab-descr Менеджмент качества
@@ -132,5 +132,5 @@ mixin s-options()
                 button.opt__btn-more <span class="opt__expand">Читать далее</span> <span class="opt__collapse">Свернуть</span>
 
             .s-options__btn-container
-                button.button.s-options__button Рассчитать стоимость
+                button.button.s-options__button.js-popup-form-calc Рассчитать стоимость
 

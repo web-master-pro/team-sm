@@ -1,51 +1,131 @@
-mixin form-order(addclass)
-    form.form-order.popup(action="assets/sendmail.php", method="POST", class= addclass)#form-order
-        h3.form-order__title Запишитесь на бесплатную консультацию
-        input(type="hidden" name="form" value="form-order")
-        input(type="text" name="name" placeholder="Ваше имя").input.form-order__input
-        input(type="tel" name="phone" placeholder="Ваш телефон").input.form-order__input.js-phone-field
-        button(type="submit").button.form-order__button Записаться
-        p.form-order__privacy Все данные строго конфиденциальны
+mixin form-calc()
+    form.form-calc.popup(action="assets/sendmail.php", method="POST")#form-calc&attributes(attributes)
+        input(type="hidden" name="form" value="form-calc")
+        h3.form-calc__title Рассчитайте стоимость сертификации
+        p.form-calc__text Выберите необходимые сертификаты
+        .form-calc__row
+            .form-calc__col
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fc-sert-1" value="ISO 90001" checked).checkbox__checkbox
+                    label(for="fc-sert-1").checkbox__label ISO 90001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fc-sert-2" value="ISO 14001").checkbox__checkbox
+                    label(for="fc-sert-2").checkbox__label ISO 14001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fc-sert-3" value="ISO 22000").checkbox__checkbox
+                    label(for="fc-sert-3").checkbox__label ISO 22000
+            .form-calc__col
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fc-sert-4" value="ISO 50001").checkbox__checkbox
+                    label(for="fc-sert-4").checkbox__label ISO 50001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fc-sert-5" value="ISO 29001").checkbox__checkbox
+                    label(for="fc-sert-5").checkbox__label ISO 29001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fc-sert-6" value="OHSAS 18001").checkbox__checkbox
+                    label(for="fc-sert-6").checkbox__label OHSAS 18001
+        .empty-checkboxes Выберите сертификаты
+        .form-calc__group
+            .input.form-calc__input
+                input(type="text" name="name").input__input
+                .input__placeholder Как вас зовут?
+            .input.input--phone.form-calc__input
+                input(type="tel" name="phone").input__input.js-phone-field
+                .input__placeholder <span>+7</span> (___) __-__-___
+            button(type="submit").button.button--popup-form.form-calc__button Рассчитать стоимость
+        p.form-calc__privacy Все данные строго конфиденциальны
 
-mixin popup-thankyou(addclass)
-    .popup-thankyou.popup(class= addclass)#popup-thankyou
+mixin form-order()
+    form.form-calc.popup(action="assets/sendmail.php", method="POST")#form-order&attributes(attributes)
+        input(type="hidden" name="form" value="form-order")
+        h3.form-calc__title Рассчитайте стоимость сертификации
+        p.form-calc__text Выберите необходимые сертификаты
+        .form-calc__row
+            .form-calc__col
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fo-sert-1" value="ISO 90001" checked).checkbox__checkbox
+                    label(for="fo-sert-1").checkbox__label ISO 90001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fo-sert-2" value="ISO 14001").checkbox__checkbox
+                    label(for="fo-sert-2").checkbox__label ISO 14001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fo-sert-3" value="ISO 22000").checkbox__checkbox
+                    label(for="fo-sert-3").checkbox__label ISO 22000
+            .form-calc__col
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fo-sert-4" value="ISO 50001").checkbox__checkbox
+                    label(for="fo-sert-4").checkbox__label ISO 50001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fo-sert-5" value="ISO 29001").checkbox__checkbox
+                    label(for="fo-sert-5").checkbox__label ISO 29001
+                .checkbox
+                    input(type="checkbox" name="serts[]" id="fo-sert-6" value="OHSAS 18001").checkbox__checkbox
+                    label(for="fo-sert-6").checkbox__label OHSAS 18001
+        .empty-checkboxes Выберите сертификаты
+        .form-calc__group
+            .input.form-calc__input
+                input(type="text" name="name").input__input
+                .input__placeholder Как вас зовут?
+            .input.input--phone.form-calc__input
+                input(type="tel" name="phone").input__input.js-phone-field
+                .input__placeholder <span>+7</span> (___) __-__-___
+            button(type="submit").button.button--popup-form.form-calc__button Рассчитать стоимость
+        p.form-calc__privacy Все данные строго конфиденциальны
+
+
+mixin form-docs()
+    form.form-calc.form-calc--min.popup(action="assets/sendmail.php", method="POST")#form-docs&attributes(attributes)
+        input(type="hidden" name="form" value="form-docs")
+        h3.form-calc__title Узнайте полный список необходимых документов
+        p.form-calc__text Оставьте заявку и мы вышлем Вам <br>полный список необходимых документов 
+        .form-calc__group
+            .input.form-calc__input
+                input(type="email" name="email").input__input
+                .input__placeholder Ваш email
+            .input.input--phone.form-calc__input
+                input(type="tel" name="phone").input__input.js-phone-field
+                .input__placeholder <span>+7</span> (___) __-__-___
+            button(type="submit").button.button--popup-form.form-calc__button Получить список
+        p.form-calc__privacy Все данные строго конфиденциальны
+
+mixin form-ask()
+    form.form-calc.form-calc--min.popup(action="assets/sendmail.php", method="POST")#form-ask&attributes(attributes)
+        input(type="hidden" name="form" value="form-ask")
+        h3.form-calc__title Задайте вопрос нашим специалистам!
+        p.form-calc__text Оставьте заявку и наш консультант <br>перезвонит и ответит на все ваши вопросы!
+        .form-calc__group
+            .input.form-calc__input
+                input(type="text" name="name").input__input
+                .input__placeholder Как вас зовут?
+            .input.input--phone.form-calc__input
+                input(type="tel" name="phone").input__input.js-phone-field
+                .input__placeholder <span>+7</span> (___) __-__-___
+            button(type="submit").button.button--popup-form.form-calc__button Жду звонка
+        p.form-calc__privacy Все данные строго конфиденциальны
+
+mixin popup-thankyou()
+    .popup-thankyou.popup#popup-thankyou&attributes(attributes)
         h3.popup-thankyou__title Спасибо!
         p.popup-thankyou__text Спасибо, что оставили заявку. Мы свяжемся с Вами в самое ближайшее время.
-        button.button.popup-thankyou__button.js-close-button Закрыть
+        button.button.button--popup-form.popup-thankyou__button.js-close-button Закрыть
 
-mixin popup-privacy(addclass)
-    .popup-privacy.popup#popup-privacy(class= addclass)
+mixin popup-privacy()
+    .popup-privacy.popup#popup-privacy&attributes(attributes)
         .popup-privacy__content
-            h2 Информация о политике конфиденциальности на сайте SITENAME.RU
-
-            p Мы признаем важность конфиденциальности информации. В этом документе описывается, какую личную информацию мы получаем и собираем, когда вы пользуетесь сайтом <a href="http://sitename.ru/">http://sitename.ru/</a>
-
+            h2 Информация о политике конфиденциальности на сайте LP.TEAM-SM.KZ
+            p Мы признаем важность конфиденциальности информации. В этом документе описывается, какую личную информацию мы получаем и собираем, когда вы пользуетесь сайтом <a href="http://lp.team-sm.kz/">http://lp.team-sm.kz</a>
             p Мы надеемся, что эти сведения помогут вам принимать осознанные решения в отношении предоставляемой нам личной информации.
-
             h3 Общедоступная информация
-
             p Если вы просто просматриваете сайт без регистрации, информация о вас не публикуется на сайте.
-
             h3 Электронная почта, телефон и другие контакты
-
             p Адрес электронной почты, телефон и другие способы связи, указываемые Вами при заказе обратного звонка, не показывается другим посетителям сайта.
-
             p Мы можем сохранять сообщения электронной почте и другие письма, отправленные пользователями, чтобы обрабатывать вопросы пользователей, отвечать на запросы и совершенствовать наши службы.
-
             h3 Протоколирование
-                
             p При каждом посещении сайта наши серверы автоматически записывают информацию, которую ваш браузер передает при посещении веб-страниц. Как правило эта информация включает запрашиваемую веб-страницу, IP-адрес компьютера, тип браузера, языковые настройки браузера, дату и время запроса, а также один или несколько файлов cookie, которые позволяют точно идентифицировать ваш браузер.
-
             h3 Куки (Cookie)
-
-            p На сайте <a href="http://sitename.ru/">http://sitename.ru/</a> используются куки (Cookies), происходит сбор данных о посетителях с помощью сервисов Яндекс Метрика. Эти данные служат для сбора информации о действиях посетителей на сайте, для улучшения качества его содержания и возможностей.
-
+            p На сайте <a href="http://lp.team-sm.kz">http://lp.team-sm.kz</a> используются куки (Cookies), происходит сбор данных о посетителях с помощью сервисов Яндекс Метрика. Эти данные служат для сбора информации о действиях посетителей на сайте, для улучшения качества его содержания и возможностей.
             p В любое время вы можете изменить параметры в настройках вашего браузера таким образом, чтобы браузер перестал сохранять все файлы cookie, а так же оповещал их об отправке. При этом следует учесть, что в этом случае некоторые сервисы и функции могут перестать работать.
-
             h3 Изменение Политики конфиденциальности
-
             p На этой странице вы сможете узнать о любых изменениях данной политики конфиденциальности. В особых случаях, вам будет выслана информация на Ваш e-mail.
-
             h3 Обратная связь
-
-            p Вы можете задать любые вопросы, написав на e-mail: <a href="mailto:mail@sitename.ru">mail@sitename.ru</a>
+            p Вы можете задать любые вопросы, написав на e-mail: <a href="mailto:teamsm@bk.ru">teamsm@bk.ru</a>

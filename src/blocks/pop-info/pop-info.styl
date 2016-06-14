@@ -10,8 +10,9 @@
         background-image url(img/star.png)
         background-repeat no-repeat
         background-position center top
-        animation pulse 1.3s ease 2s infinite normal;
-        &:hover
+        animation pulse 3s ease 1.5s infinite normal
+        // &:hover
+        &.on
             background-position center bottom
             animation none
 
@@ -144,11 +145,11 @@
 @keyframes pulse
     0%
         transform translateY(0)
-    14%
-        transform translateY(-3px)
-    28%
+    7%
+        transform translateY(-4px)
+    15%
         transform translateY(0)
-    42%
-        transform translateY(-3px)
-    70%
+    22%
+        transform translateY(-4px)
+    30%
         transform translateY(0)

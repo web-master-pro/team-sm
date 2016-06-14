@@ -11,27 +11,27 @@ $(document).ready(function() {
         sounds: [
             {
                 name: "beep",
-                volume: 0.3
+                volume: 0.1
             }
         ],
-        volume: 0.5,
+        volume: 0.1,
         path: "assets/sounds/",
         preload: true
     });
 
     $(".button, .consult-form__button").mouseenter(function(){
-        ion.sound.play("beep",{volume: 0.3});
-    });
-
-    $(".opt__tab").mouseenter(function(){
-        setTimeout(ion.sound.play("beep",{volume: 0.1}), 700)
-    });
-
-    $(".pop-info__trigger").mouseenter(function(){
         ion.sound.play("beep",{volume: 0.1});
     });
 
-    $('.js-phone-field').mask('8 (999) 99-99-999');
+    // $(".opt__tab").mouseenter(function(){
+    //     setTimeout(ion.sound.play("beep",{volume: 0.1}), 700)
+    // });
+
+    // $(".pop-info__trigger").mouseenter(function(){
+    //     ion.sound.play("beep",{volume: 0.1});
+    // });
+
+    $('.js-phone-field').mask('+7 (999) 99-99-999');
 
     if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
         $('html').addClass('safari');

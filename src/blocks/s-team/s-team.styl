@@ -1,0 +1,185 @@
+.s-team
+    background #fff url(img/s-team-bg.jpg) no-repeat center top
+    background-size cover
+
+    &__inner
+        container(1400px)
+        padding 78px 20px 0
+
+    &__title
+        color #002d1a
+        font(Bold)
+        fs(30px,50px)
+        line-height 1
+        text-align center
+        margin 0 0 2em
+
+    &__photo
+        display block
+        width 100%
+        max-width 592px
+        height auto
+        margin 0 auto 47px
+
+    &__name
+        color #002d1a
+        fs(22px,36px,767px,1200px)
+        font(Bold)
+        line-height 1
+        margin 0 0 1em
+        span
+            color #22bb7c
+            fs(16px,24px,767px,1200px)
+
+    &__descr
+        display block
+        color #002d1a
+        font()
+        fs(14px,18px,767px,1200px)
+        line-height 1.5
+        margin 0
+        overflow hidden
+        text-oveflow ellipsis
+        max-height 6em
+        transition max-height .5s ease
+        ^[0]__item.expanded &
+            max-height 100em
+            transition max-height .5s ease
+        p
+            margin 0
+
+    &__more
+        display block
+        color #22bb7c
+        font()
+        fs(14px,18px,767px,1200px)
+        line-height 1
+        text-decoration none
+        text-align right
+        margin 20px 0 0
+        span
+            border-bottom 1px dashed #22bb7c
+        &:hover
+            color @color
+            text-decoration none
+            span
+                border-color transparent
+
+    &__more-expand
+        display inline-block
+        ^[0]__item.expanded &
+            display none
+
+    &__more-collapse
+        display none
+        ^[0]__item.expanded &
+            display inline-block
+
+
+    &__list
+        max-width 1190px
+        display flex
+        flex-flow row wrap
+        justify-content space-around
+        list-style none
+        font-size 0
+        text-align center
+        padding 0
+        margin 0 auto
+
+    &__item
+        flex 1 1 33.3333%
+        display inline-block
+        vertical-align top
+        width 345px
+        text-align left
+        padding 0 25px 50px
+        margin 0
+        +below(767px)
+            flex 1 1 100%
+        +below(479px)
+            padding 0 0 30px
+
+    &__slider
+        padding 0
+
+.sky-carousel
+    height 530px
+.sky-carousel .sc-content-wrapper
+    position absolute
+    text-align center
+    width 100%;
+    top 230px
+    left 50%
+    z-index 4999
+
+.sky-carousel .sc-content-container
+    position relative
+    left -50%;
+    padding 0 20px
+
+.sky-carousel .sc-content-wrapper h2
+    color #002d1a
+    font(Bold)
+    fs(18px,24px)
+    line-height 1.2
+    text-align center
+    padding 0
+    margin 0 0 1.5em
+
+.sky-carousel .sc-content-wrapper p
+    display block
+    width 100%
+    max-width 500px
+    color #002d1a
+    font()
+    fs(14px,18px)
+    line-height 1.5
+    text-align left
+    padding 0 0 0 44px
+    margin 0 auto
+    position relative
+    &::before
+        content ""
+        display block
+        width 12px
+        background-color #009457
+        position absolute
+        top 0
+        left 0
+        bottom 0
+    +below(767px)
+        line-height 1.3
+        padding-left 25px
+        &::before
+            width 6px
+
+.sky-carousel .sc-nav-button
+    position absolute
+    top 92px
+    z-index 5000
+    width 55px
+    height 55px
+    opacity 0.5
+    transition opacity 0.3s ease
+    &:hover
+        opacity 1
+
+
+.sky-carousel .sc-nav-button.sc-next
+    background url(img/slider-next.png) no-repeat 0 0
+    right 0
+    +below(479px)
+        transform-origin right center
+        transform scale(.5)
+
+.sky-carousel .sc-nav-button.sc-prev
+    background url(img/slider-prev.png) no-repeat 0 0
+    left 0
+    +below(479px)
+        transform-origin left center
+        transform scale(.5)
+
+
+
+

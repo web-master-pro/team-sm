@@ -74,6 +74,7 @@
             background url(img/s-options-icon-5.png) no-repeat center center
         &--6::before
             background url(img/s-options-icon-6.png) no-repeat center center
+        &.active::before
         &:hover::before
             top -70px
         +below(1100px)
@@ -103,6 +104,7 @@
             padding-right 10px
             height 150px
 
+        ^[0]__tab.active &
         &:hover
             height 218px
             background-color #009457
@@ -121,6 +123,7 @@
         margin 0 0 15px
         transition all .3s ease
         ^[0]__tab-box:hover &
+        ^[0]__tab.active &
             color white
 
     &__tab-descr
@@ -134,6 +137,7 @@
         margin 0
         transition all .3s ease
         ^[0]__tab-box:hover &
+        ^[0]__tab.active &
             color white
         +below(479px)
             height 55px
@@ -147,6 +151,7 @@
         border-bottom 1px dotted #009457
         transition all .3s ease
         ^[0]__tab-box:hover &
+        ^[0]__tab.active &
             color white
             border-bottom none
 

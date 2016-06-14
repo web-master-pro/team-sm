@@ -1,77 +1,136 @@
-.form-order
+.form-calc
     display block
-    max-width 530px
+    max-width 752px
     min-height 500px
     background-color white
-    box-shadow 0 0 30px rgba(0, 0, 0, 0.3)
-    padding 60px 15px 25px
+    box-shadow 0 0 50px rgba(0, 0, 0, 0.4)
+    padding 75px 20px 50px
     margin auto
+    +below(479px)
+        padding 70px 20px 30px
+
+    &--min
+        max-width 652px
 
     &__title
-        color: #003874;
+        max-width 500px
+        color #002d1a
         font(Bold)
-        font-size: 32px;
-        line-height: 1.3
-        text-align: center;
-        margin 0 0 50px
+        fs(26px,40px)
+        line-height 1.2
+        text-align center
+        margin 0 auto 1.6em
+        +below(479px)
+            line-height 1
+            margin-bottom .8em
+        ^[0]--min &
+            margin-bottom .8em
+
+    &__text
+        color #002d1a
+        font()
+        fs(18px,24px)
+        font-weight 400
+        text-align center
+        margin 0 auto 1.65em
+        +below(479px)
+            margin-bottom 30px
+        ^[0]--min &
+            margin-bottom 2em
+            +below(479px)
+                margin-bottom 1em
+
+    &__row
+        width 100%
+        max-width 350px
+        display flex
+        flex-flow row nowrap
+        justify-content space-between
+        margin 0 auto
+        +below(767px)
+            margin 0 auto
+        +below(479px)
+            flex-wrap wrap
+            justify-content center
+
+    .empty-checkboxes
+        display none
+        width 100%
+        color red
+        font()
+        fs(14px,18px)
+        line-height 1
+        text-align center
+        padding 0px 20px
+        margin 0px auto -1em
+        &.hidden
+            display none !important
+        +below(767px)
+            margin-bottom 0
+
+    &__col
+        display inline-block
+        flex 0 1 auto
+        +below(479px)
+            flex 0 1 180px
+            display block
+
+    &__group
+        display block
+        width 100%
+        max-width 330px
+        margin 45px auto 0
+        +below(767px)
+            margin-top 20px
 
     &__input
-        // input()
         display block
-        margin: 0 auto 15px
+        margin 0 auto 20px
 
     &__button
-        // button()
-        height 50px
-        margin 20px auto 90px
-        +below(800px)
-            margin-bottom 50px
+        fs(18px,26px)
+        margin 30px auto 25px
 
     &__privacy
-        max-width 278px
-        color #58585a
-        font(Thin)
-        font-size 14px
+        color #bbb
+        font()
+        fs(14px,18px)
         line-height 1
-        padding-left 30px
-        text-align left
-        position relative
+        text-align center
         margin 0 auto
-        +below(800px)
-            max-width 170px
 
 
 .popup-thankyou
     display block
     max-width 400px
-    min-height 200px
     background-color white
-    box-shadow 0 0 30px rgba(0, 0, 0, 0.3)
-    padding 60px 15px 50px
+    box-shadow 0 0 50px rgba(0, 0, 0, 0.4)
+    padding 75px 20px 50px
     margin auto
+    +below(479px)
+        padding 70px 20px 30px
 
     &__title
-        color: #003874;
+        max-width 500px
+        color #002d1a
         font(Bold)
-        font-size: 36px;
-        line-height: 1.3
-        text-align: center;
-        margin 0 0 20px
-
-    &__text
-        max-width 278px
-        color #003874
-        font(Thin)
-        font-size 22px
+        fs(30px,40px)
         line-height 1.2
         text-align center
-        margin 0 auto 45px
-        strong
-            font(Bold)
+        margin 0 auto 0.8em
+
+    &__text
+        color #002d1a
+        font()
+        fs(18px,24px)
+        font-weight 400
+        text-align center
+        margin 0 auto 2em
+
     &__button
-        button()
-        height 50px
+        fs(18px,26px)
         margin 0 auto
+        max-width 280px
 
 .popup-privacy
     display block
@@ -83,6 +142,8 @@
     padding 70px 80px 50px
     position relative
     margin 20px auto
+    +below(479px)
+        padding 70px 20px 30px
 
     &__content
         display block
@@ -90,65 +151,58 @@
         height 100%
         color #00060c
         font()
-        font-size 18px
+        fs(16px,18px)
         line-height 1.4
         text-align left
-        +below(480px)
-            font-size 16px
 
         h2
-            color #003874
+            color #002d1a
             font(Bold)
-            font-size 30px
-            line-height 1
+            fs(22px,30px)
+            line-height 1.2
             text-align center
             text-transform uppercase
             margin 0 auto 50px
-            +below(480px)
-                font-size 22px
 
         h3
-            color #003874
-            font-size 24px
+            color #002d1a
             font(Bold)
-            line-height 1
+            fs(20px,24px)
+            line-height 1.2
             text-align center
             margin 0 0 25px
-            +below(480px)
-                font-size 20px
 
         p
             line-height 1.3
             margin 0 0 20px
 
         a
-            color #003874
+            color #41af82
             text-decoration: underline
             &:hover
                 color @color
                 text-decoration none
 
 .popup
+    z-index 9999
     .mfp-close
-        display block
-        width 35px
-        height 35px
-        background-color #004c9d
-        color #fff
-        font(Thin)
-        font-size 35px
-        line-height 35px
+        display inline-block
+        background none
+        color #e1e1e1
+        font(Extra)
+        font-size 60px
+        line-height 1
         text-align center
         border none
-        padding 2px 0 0
+        padding 0
         position absolute
-        opacity 0.2
-        top 0px
-        right 0px
-        transition opacity 0.3s ease
+        opacity 1
+        top 5px
+        right 14px
+        transition color 0.3s ease
         &:hover
-            color #fff
-            opacity 0.8
+            color #41af82
+            opacity 1
             text-shadow none
 
 

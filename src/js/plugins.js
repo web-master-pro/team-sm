@@ -26,6 +26,8 @@
 //= ../libs/magnific-popup/jquery.magnific-popup.js
 //= ../libs/ion.sound/ion.sound.js
 //= ../libs/owl.carousel/owl.carousel.js
+//= ../libs/sky-carousel/jquery.sky.carousel-1.0.2.min.js
 //= ../libs/jquery.maskedinput/jquery.maskedinput.js
 //= ../libs/jquery-validation/jquery.validate.js
+//= ../libs/device.js/device.js
 //= ../libs/smoothscroll/smoothscroll.js

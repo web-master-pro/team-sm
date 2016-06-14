@@ -4,22 +4,22 @@ mixin s-consult()
     section.s-consult&attributes(attributes)
         .s-consult__inner
 
-            form(action="assets/sendmail.php" method="POST").consult-form.s-consult__form#consult-form
-                input(type="hidden" name="form" value="consult-form")
-                h2.consult-form__title Экспресс-консультация
-                p.consult-form__text Хотите получить профессиональную и бесплатную консультацию по вашей проблеме? Закажите её прямо сейчас!
-                .consult-form__group
-                    .input.consult-form__input
+            form(action="assets/sendmail.php" method="POST").form-consult.s-consult__form#form-consult
+                input(type="hidden" name="form" value="form-consult")
+                h2.form-consult__title Экспресс-консультация
+                p.form-consult__text Хотите получить профессиональную и бесплатную консультацию по вашей проблеме? Закажите её прямо сейчас!
+                .form-consult__group
+                    .input.input--consult.input--phone.form-consult__input
                         input(type="tel" name="phone").input__input.js-phone-field
-                        .input__placeholder <span>8</span> (987) 58-34-244
-                    button(type="submit").consult-form__button
+                        .input__placeholder <span>+7</span> (___) __-__-___
+                    button(type="submit").form-consult__button
 
             +pop-info(class="pop-info--left s-consult__pop-info")
                 <strong>Окончательная стоимость</strong> получения сертификата определяется после первичного анализа заявки и представленной документации.
 
             .s-consult__auditor
                 h3.s-consult__name Марина Тё
-                p.s-consult__position Экспресс-аудитор
+                p.s-consult__position Эксперт-аудитор
 
             img(src="assets/img/s-consult-auditor.png" alt="").s-consult__photo
 

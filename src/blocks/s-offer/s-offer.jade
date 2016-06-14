@@ -1,0 +1,20 @@
+mixin s-offer()
+    section.s-offer&attributes(attributes)
+        .s-offer__inner
+            h2.s-offer__title Выгодное предложение!
+            p.s-offer__text Платите за 1 аудит - получаете 2&nbsp;сертификата! <br>Всего на 10% дороже. Только до конца июня.
+
+            .s-offer__box
+                h3.s-offer__offer По цене 1 аудита!
+                img(src="assets/img/s-offer-serts.png" alt="").s-offer__serts
+
+            form(action="assets/sendmail.php" method="POST").form-offer.s-offer__form#form-offer
+                input(type="hidden" name="form" value="form-offer")
+                .input.form-offer__input
+                    input(type="text" name="name").input__input
+                    .input__placeholder Как вас зовут?
+                .input.input--phone.form-offer__input
+                    input(type="tel" name="phone").input__input.js-phone-field
+                    .input__placeholder <span>+7</span> (___) __-__-___
+                button(type="submit").button.button--popup-form.form-offer__button Рассчитать стоимость
+

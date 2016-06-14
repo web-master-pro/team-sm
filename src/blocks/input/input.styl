@@ -1,101 +1,98 @@
 .input
     display block
     width 100%
-    max-width 340px
     position relative
-
+    &--consult
+        max-width 340px
 
     &__input
         display block
         width 100%
-        height 70px
-        max-width 330px
+        height 60px
         background-color white
         background-clip padding-box
-        border-radius 35px
-        border 5px solid rgba(0, 148, 87, 0.3)
-        color #009457
-        font(Semi)
-        font-size 24px
-        line-height 60px
-        padding 0 35px
+        border-radius 30px
+        border 1px solid #fff
+        box-shadow 0 0 10px rgba(0, 0, 0, 0.16)
+        color #9e9e9e
+        font()
+        font-size 20px
+        line-height 58px
+        padding 0 30px
         margin 0
+        transition all .3s ease
         &:focus
-            border-color rgba(0, 148, 87, 0.6)
+            border 1px solid #009457
+        ^[0]--phone &
+            color #009457
+        ^[0]--consult &
+            color #009457
+            box-shadow none
+            max-width 330px
+            height 70px
+            line-height 60px
+            border 5px solid rgba(0, 148, 87, 0.3)
+            border-radius 35px
+            font(Semi)
+            font-size 24px
+            padding 0 35px
+            &:focus
+                border 5px solid rgba(0, 148, 87, 0.6)
         +below(767px)
-            height 60px
-            line-height 52px
-            border-width 4px
-            font-size 20px
-            padding 0 26px
+            font-size 18px
+            padding 0 20px
+            ^[0]--consult &
+                height 60px
+                border-width 4px
+                line-height 52px
+                font-size 20px
+                padding 0 26px
         +below(479px)
             height 50px
-            line-height 42px
+            line-height 48px
             font-size 16px
-            padding 0 16px
+            padding 0 20px
+            ^[0]--consult &
+                height 50px
+                padding 0 16px
+                line-height 42px
 
     &__placeholder
-        color #c9e3d8
-        font(Semi)
-        font-size 24px
-        line-height 1
+        color #bebebe
+        font()
+        font-size 20px
         position absolute
-        top 50%
-        left 40px
+        top 30px
+        left 30px
         transform translateY(-50%)
-        span
-            color #009457
+        ^[0]--phone &
+            color #c9e3d8
+            span
+                color #009457
+        ^[0]--consult &
+            color #c9e3d8
+            font(Semi)
+            font-size 24px
+            line-height 1
+            top 35px
+            left 40px
+            transform translateY(-50%)
+            span
+                color #009457
         +below(767px)
-            font-size 20px
-            left 30px
+            font-size 18px
+            left 20px
+            ^[0]--consult &
+                top 30px
+                font-size 20px
+                left 30px
         +below(479px)
             font-size 16px
-            left 20px
+            top 25px
+            ^[0]--consult &
+                top 25px
+                left 20px
 
-// input()
-//     box-sizing border-box
-//     width 100%
-//     max-width 278px
-//     height 45px
-//     background-color white
-//     border 1px solid #e4e4e4
-//     color #003874
-//     font(Thin)
-//     font-size 18px
-//     line-height 45px
-//     padding 0 20px
-//     position relative
-//     &:focus
-//         background-color white
-//         border 1px solid #000
-
-
-//     &::-webkit-input-placeholder
-//         color #000
-//         opacity 1
-//     &::-moz-placeholder
-//         color #000
-//         opacity 1
-//     &:-moz-placeholder
-//         color #000
-//         opacity 1
-//     &:-ms-input-placeholder
-//         color #000
-//         opacity 1
-//     &:input-placeholder
-//         color #000
-//         opacity 1
-
-//     &:focus::-webkit-input-placeholder
-//         color #000
-//     &:focus::-moz-placeholder
-//         color #000
-//     &:focus:-moz-placeholder
-//         color #000
-//     &:focus:-ms-input-placeholder
-//         color #000
-//     &:focus:input-placeholder
-//         color #000
 
 //     &:-webkit-autofill
 //         -webkit-box-shadow inset 0 0 0 50px rgba(255,255,255,1) !important
@@ -104,16 +101,15 @@
 //         color #000 !important
 
 
-// label.invalid-field
-//     display block
-//     width 100%
-//     max-width 278px
-//     color red
-//     font(Regular)
-//     font-size 14px
-//     line-height 1
-//     text-align center
-//     padding 0px 20px
-//     margin -10px auto 15px
-//     &.hidden
-//         display none !important
+label.invalid-field
+    display block
+    width 100%
+    color red
+    font()
+    fs(14px,18px)
+    line-height 1
+    text-align center
+    padding 0px
+    margin 5px auto -5px
+    &.hidden
+        display none !important
