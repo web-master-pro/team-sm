@@ -109,6 +109,12 @@ mixin popup-thankyou()
         p.popup-thankyou__text Спасибо, что оставили заявку. Мы свяжемся с Вами в самое ближайшее время.
         button.button.button--popup-form.popup-thankyou__button.js-close-button Закрыть
 
+mixin popup-thankyou-docs()
+    .popup-thankyou.popup#popup-thankyou-docs&attributes(attributes)
+        h3.popup-thankyou__title Спасибо!
+        p.popup-thankyou__text Мы уже выслали всю информацию Вам на указанный email, благодарим за проявленный интерес к нашей компании.
+        button.button.button--popup-form.popup-thankyou__button.js-close-button Спасибо
+
 mixin popup-privacy()
     .popup-privacy.popup#popup-privacy&attributes(attributes)
         .popup-privacy__content

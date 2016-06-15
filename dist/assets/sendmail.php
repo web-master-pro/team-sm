@@ -1,6 +1,6 @@
 <?php
 
-    // НАСТРОЙКИ получателя/отправителя
+    // НАСТРОЙКИ получателя/отправителя teamsm@bk.ru
     $to_email    = "teamsm@bk.ru";         // Email получателя отчетов, например: 'admin@mysite.ru'
     $to_name     = "Team Expert";          // Имя получателя отчетов, например: 'Иван Петров'
     $from_email  = "";                     // Email отправителя, например: 'noreply@mysite.ru'
@@ -90,6 +90,28 @@
     $message .= "</body></html>";
 
     $result = @mail($to_email, $subject, $message, $headers);
+
+    $headline = "Первичный список документов";
+
+    if ($data["form"] == "form-docs") {
+        $headers  = "From: $from_name <$from_email>\r\n";
+        $headers .= "Reply-To: $from_name <$from_email>\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
+        $message  = "<html><body style=\"font-family:Arial,sans-serif;\">\r\n";
+        $message .= "<h2 style=\"border-bottom:1px solid #ccc;\">" . $headline. "</h2>\r\n";
+        $message .= "<p><strong>Уважаемые клиенты, подготовьте заранее следующий перечень документов:</strong> </p>\r\n";
+        $message .= "<p>- Учредительные документы<br>\r\n";
+        $message .= "<p>- Устав, свидетельство о государственной регистрации компании<br>\r\n";
+        $message .= "<p>- Реквизиты, банковские реквизиты<br>\r\n";
+        $message .= "<p>- Приказ на директора, штатное расписание<br>\r\n";
+        $message .= "<p>- Разрешительные документы (лицензии, аттестаты и тд)</p>\r\n";
+        $message .= "<p>&nbsp;</p>\r\n";
+        $message .= "<p>С уважением,<br>\r\n";
+        $message .= "Team Expert SM</p>\r\n";
+    };
+
+    @mail($data["email"], $headline, $message, $headers);
 
     if($result) {
         echo "true";

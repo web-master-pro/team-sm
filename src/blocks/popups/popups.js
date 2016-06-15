@@ -224,7 +224,7 @@ $(document).ready(function(){
             }).done(function() {
                 $.magnificPopup.open({
                     items:{
-                        src:$('#popup-thankyou')
+                        src:$('#popup-thankyou-docs')
                     },
                     type:'inline',
                     midClick: true,

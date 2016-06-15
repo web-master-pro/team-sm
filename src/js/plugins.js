@@ -30,4 +30,5 @@
 //= ../libs/jquery.maskedinput/jquery.maskedinput.js
 //= ../libs/jquery-validation/jquery.validate.js
 //= ../libs/device.js/device.js
+//= ../libs/wow/wow.js
 //= ../libs/smoothscroll/smoothscroll.js
