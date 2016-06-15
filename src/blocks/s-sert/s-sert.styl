@@ -1,17 +1,180 @@
 .s-sert
     background #fff url(img/s-sert-bg.jpg) no-repeat center bottom
+    background-size cover
+
     &__inner
         container(1140px)
-        padding 90px 10px 30px
-        min-height1 1126px
+        padding 95px 0px 0px
+        +below(767px)
+            padding-top 50px
 
     &__title
         color #002d1a
-        font()
+        font(Bold)
         fs(26px,50px)
         line-height 1
         text-align center
-        margin 0 0 140px
+        margin 0 0 2.8em
+        padding 0 10px
+        +below(767px)
+            margin-bottom 1.5em
 
     &__img
         max-width 100%
+
+.sert
+    padding 0
+    position relative
+
+    &__point
+        display block
+        width 50px
+        height 50px
+        position absolute
+        background url(img/s-sert-point.png) no-repeat center center
+        +below(767px)
+            transform scale(.7)
+
+        &--1
+            top 48%
+            left 16%
+            +below(479px)
+                left 10%
+                top 40%
+        &--2
+            top 65%
+            left 31%
+
+        &--3
+            top 29%
+            left 54%
+            +below(479px)
+                left 40%
+        &--4
+            top 38%
+            left 61%
+            +below(479px)
+                left 55%
+
+    &__line
+        display block
+        height 1px
+        border-top 1px solid #17b876
+        transform-origin top left
+        position absolute
+        +below(767px)
+            display none
+        &--1
+            top 50%
+            left 18%
+            width 210px
+            transform rotate(-120deg)
+            +below(1100px)
+                width 180px
+            +below(991px)
+                width 150px
+
+        &--2
+            top 68%
+            left 33.5%
+            width 278px
+            transform rotate(143deg)
+            +below(1100px)
+                width 220px
+            +below(991px)
+                width 170px
+                left 34%
+            +below(889px)
+                top 69%
+        &--3
+            top 32%
+            left 56%
+            width 310px
+            transform rotate(-45deg)
+            +below(1100px)
+                width 250px
+            +below(991px)
+                left 57%
+                width 180px
+        &--4
+            top 41%
+            left 63%
+            width 200px
+            transform rotate(-12deg)
+            +below(1100px)
+                width 160px
+            +below(991px)
+                top 41.5%
+                width 130px
+            +below(889px)
+                top 42%
+
+    &__text
+        display inline-block
+        color #00060c
+        font(Bold)
+        fs(12px,20px)
+        line-height 1
+        padding 12px 12px 16px
+        position absolute
+        transition all .5s ease
+        +below(767px)
+            padding 5px 5px 8px
+        &::after
+            content ""
+            height 5px
+            background-color #32c186
+            position absolute
+            bottom 0
+            left 12px
+            right 12px
+            transition all .5s ease
+            +below(767px)
+                left 5px
+                right 5px
+                height 3px
+        &.active
+            color white
+            background-color #32c186
+            &::after
+                opacity 0
+
+        &--1
+            top 17%
+            left 1%
+        &--2
+            top 90%
+            left 1%
+            +below(767px)
+                top 84%
+        &--3
+            top -8%
+            left 69%
+            +below(991px)
+                left auto
+                right 10%
+            +below(479px)
+                top 0%
+
+        &--4
+            top 31%
+            left 81%
+            +below(991px)
+                left auto
+                right 1%
+            +below(479px)
+                top 50%
+
+    &__pop-info
+        position absolute
+        top 75%
+        right 1%
+        +above(480px)
+            right 5%
+        +above(768px)
+            right 10%
+            top 80%
+        +above(1000px)
+            right 20%
+
+

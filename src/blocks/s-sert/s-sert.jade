@@ -4,3 +4,17 @@ mixin s-sert()
             h2.s-sert__title Образец вашего сертификата
             .sert
                 img(src="assets/img/s-sert-sertificate.png" alt="").s-sert__img
+                .sert__point.sert__point--1
+                .sert__text.sert__text--1.active Печать органа <br>сертификации
+                .sert__line.sert__line--1
+                .sert__point.sert__point--2
+                .sert__text.sert__text--2 Подпись руководителя <br>органа сертификации
+                .sert__line.sert__line--2
+                .sert__point.sert__point--3
+                .sert__text.sert__text--3 Регистрационный <br>номер документа, <br>занесённый в реестр
+                .sert__line.sert__line--3
+                .sert__point.sert__point--4
+                .sert__text.sert__text--4 Срок действия <br>документа
+                .sert__line.sert__line--4
+                +pop-info(class="pop-info--right sert__pop-info")
+                    <strong>Сертификат выдаётся сроком на 3 года.</strong> В течение срока действия проводится две инспекции.
