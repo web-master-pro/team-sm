@@ -1,0 +1,76 @@
+.s-thanks
+    background url(img/s-thanks-bg-top.jpg) no-repeat center top
+    background-size cover
+    position relative
+
+    &__wrapper
+        position relative
+        background url(img/s-thanks-bg-bottom.jpg) no-repeat center bottom
+        +above(1920px)
+            background-size contain
+
+    &__bottom
+        display block
+        height 575px
+        background url(img/s-thanks-table.png) no-repeat center bottom
+        background-size1 contain
+        position absolute
+        bottom 85px
+        left 0
+        right 0
+        +below(479px)
+            display none
+
+    &__inner
+        container(1050px)
+        padding 40px 20px 580px
+        +below(479px)
+            padding-bottom 10px
+
+    &__row
+        width 100%
+        display flex
+        flex-flow row nowrap
+        align-items center
+        justify-content center
+        +below(479px)
+            flex-wrap wrap
+
+    &__col-1
+    &__col-2
+    &__col-3
+        display block
+        text-align center
+        margin-bottom 110px
+        +below(991px)
+            margin-bottom 50px
+    &__col-1
+    &__col-3
+        flex 1 1 35%
+    &__col-2
+        flex 1 1 30%
+    +below(479px)
+        &__col-1
+            flex 1 1 100%
+            margin-bottom 20px
+        &__col-2
+        &__col-3
+            flex 1 1 50%
+            margin-bottom 20px
+
+    &__img
+        max-width 100%
+        transition all .3s ease
+        &:hover
+            transform translateY(-5px)
+
+    &__col-4
+        display block
+        flex 1 1 25%
+        text-align center
+        +below(479px)
+            flex 1 1 50%
+            margin-bottom 20px
+
+    &__img
+        max-width 100%

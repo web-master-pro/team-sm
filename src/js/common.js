@@ -7,6 +7,13 @@ $(document).ready(function() {
         return false;
     });
 
+    $('.js-gallery').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
+    });
+
     ion.sound({
         sounds: [
             {

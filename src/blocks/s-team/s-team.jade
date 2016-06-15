@@ -2,6 +2,8 @@ mixin s-team()
     section.s-team&attributes(attributes)
         .s-team__inner
             h2.s-team__title Наша сплоченная команда
+            +pop-info(class="pop-info--right pop-info--min s-team__pop-info")
+                <strong>TeamExper SM регулярно оказывает благотворительную поддержку «Общественному фонду КЗ».</strong>
             img(src="assets/img/s-team-photo.png" alt="").s-team__photo
             ul.s-team__list
                 li.s-team__item

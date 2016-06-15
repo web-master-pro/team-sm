@@ -5,10 +5,12 @@ include ../blocks/s-consult/s-consult
 include ../blocks/s-advs/s-advs
 include ../blocks/s-audit/s-audit
 include ../blocks/s-about/s-about
+include ../blocks/s-sert/s-sert
 include ../blocks/s-offer/s-offer
 include ../blocks/s-steps/s-steps
 include ../blocks/s-clients/s-clients
 include ../blocks/s-team/s-team
+include ../blocks/s-thanks/s-thanks
 include ../blocks/s-progress/s-progress
 include ../blocks/s-questions/s-questions
 include ../blocks/footer/footer
@@ -63,19 +65,19 @@ html(lang="ru-RU")
     body
         +browsehappy()
         +header(id="header")
-
         +s-options(id="options")
         +s-consult(id="consult")
         +s-advs(id="advantages")
         +s-audit(id="audit")
         +s-about(id="about")
+        //- +s-sert(id="sertificate")
         +s-offer(id="offer")
         +s-steps(id="steps")
         +s-clients(id="clients")
         +s-team(id="team")
+        +s-thanks(id="thanks")
         +s-progress(id="progress")
         +s-questions(id="questions")
-        
         +footer(id="footer")
 
         .hidden

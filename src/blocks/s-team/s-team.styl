@@ -14,6 +14,15 @@
         text-align center
         margin 0 0 2em
 
+    &__pop-info
+        position absolute
+        top 175px
+        right 180px
+        +below(1100px)
+            right 10px
+        +below(767px)
+            top 110px
+
     &__photo
         display block
         width 100%
@@ -67,14 +76,17 @@
 
     &__more-expand
         display inline-block
+        opacity 1
         ^[0]__item.expanded &
             display none
+            opacity 0
 
     &__more-collapse
         display none
+        opacity 0
         ^[0]__item.expanded &
             display inline-block
-
+            opacity 1
 
     &__list
         max-width 1190px
@@ -111,7 +123,7 @@
     width 100%;
     top 230px
     left 50%
-    z-index 4999
+    z-index 999
 
 .sky-carousel .sc-content-container
     position relative
@@ -165,7 +177,6 @@
     &:hover
         opacity 1
 
-
 .sky-carousel .sc-nav-button.sc-next
     background url(img/slider-next.png) no-repeat 0 0
     right 0
@@ -179,7 +190,3 @@
     +below(479px)
         transform-origin left center
         transform scale(.5)
-
-
-
-

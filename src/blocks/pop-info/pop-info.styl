@@ -11,7 +11,6 @@
         background-repeat no-repeat
         background-position center top
         animation pulse 3s ease 1.5s infinite normal
-        // &:hover
         &.on
             background-position center bottom
             animation none
@@ -136,10 +135,14 @@
         +below(550px)
             max-width 320px
         +below(479px)
-            max-width 320px
-            padding 20px
+            &
+            ^[0]--min &
+                max-width 320px
+                padding 20px
         +below(400px)
-            max-width 250px
+            &
+            ^[0]--min &
+                max-width 250px
 
 
 @keyframes pulse
