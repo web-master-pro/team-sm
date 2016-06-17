@@ -26,7 +26,7 @@ $(document).ready(function() {
         preload: true
     });
 
-    $(".button, .consult-form__button").mouseenter(function(){
+    $(".button, .form-consult__button").mouseenter(function(){
         ion.sound.play("beep",{volume: 0.1});
     });
 
